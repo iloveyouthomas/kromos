@@ -18,9 +18,9 @@ local camera = game.Workspace.CurrentCamera
 
 library.theme = {
     fontsize = 14,
-    titlesize = 15,
-    font = Enum.Font.Code,
-    background = "rbxassetid://5553946656",
+    titlesize = 16,
+    font = Enum.Font.GothamBlack,
+    background = nil,
     tilesize = 80,
     cursor = false,
     cursorimg = "https://raw.githubusercontent.com/niqu1337/vertical/main/assets/lib/cursor.png",
