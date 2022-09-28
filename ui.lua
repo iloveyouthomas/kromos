@@ -498,7 +498,6 @@ function library:CreateWindow(name, size, hidebutton)
             tab.TabButton.Name = "SelectedTab"
             tab.Right.Visible = true
             tab.Left.Visible = true
-            window.Line:TweenSizeAndPosition(UDim2.fromOffset(size.X + 15, 1), UDim2.new(0, (tab.TabButton.AbsolutePosition.X - window.Frame.AbsolutePosition.X), 0, 0) + (window.BlackLine.Position - UDim2.fromOffset(0, 1)), Enum.EasingDirection.In, Enum.EasingStyle.Sine, 0.15)
             wait(0.2)
             block = false
         end
