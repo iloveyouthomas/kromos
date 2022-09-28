@@ -3399,7 +3399,7 @@ function library:CreateWindow(name, size, hidebutton)
         function tab:CreateConfigSystem(side)
             local configSystem = { }
 
-            configSystem.configFolder = "vertical"
+            configSystem.configFolder = "kromos"
             if (not isfolder(configSystem.configFolder)) then
                 makefolder(configSystem.configFolder)
             end
@@ -3447,12 +3447,6 @@ function library:CreateWindow(name, size, hidebutton)
                             end
                         end
                     end)
-
-                    getgenv().VERTICAL_SENDNOTIFY({
-                        Title = "vertical : hydro-software.com";
-                        Description = "Successfully loaded config";
-                        Duration = 3;
-                    });
                 end
             end)
 
@@ -3473,12 +3467,6 @@ function library:CreateWindow(name, size, hidebutton)
                         end
                     end
                     writefile(configSystem.configFolder .. "/" .. Config:Get() .. ".txt", httpservice:JSONEncode(config))
-
-                    getgenv().VERTICAL_SENDNOTIFY({
-                        Title = "vertical : hydro-software.com";
-                        Description = "Successfully saved config";
-                        Duration = 3;
-                    });
                 end
             end)
 
@@ -3508,12 +3496,6 @@ function library:CreateWindow(name, size, hidebutton)
                             Config:Add(tostring(v):gsub(configSystem.configFolder .. "\\", ""):gsub(".txt", ""))
                         end
                     end
-
-                    getgenv().VERTICAL_SENDNOTIFY({
-                        Title = "vertical : hydro-software.com";
-                        Description = "Successfully created config";
-                        Duration = 3;
-                    });
                 end
             end)
 
@@ -3531,12 +3513,6 @@ function library:CreateWindow(name, size, hidebutton)
                         Config:Add(tostring(v):gsub(configSystem.configFolder .. "\\", ""):gsub(".txt", ""))
                     end
                 end
-
-                getgenv().VERTICAL_SENDNOTIFY({
-                    Title = "vertical : hydro-software.com";
-                    Description = "Successfully deleted config";
-                    Duration = 3;
-                });
             end)
 
             return configSystem
