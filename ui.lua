@@ -213,7 +213,7 @@ function library:CreateWatermark(name, position)
     return watermark
 end
 
-function library:CreateWindow(name, size, hidebutton)
+function library:CreateWindow(name, hidebutton)
     local window = { }
 
     window.name = name or ""
