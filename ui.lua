@@ -607,7 +607,7 @@ function library:CreateWindow(name, hidebutton)
             sector.ListPadding.PaddingLeft = UDim.new(0, 6)
             sector.ListPadding.PaddingRight = UDim.new(0, 6)
 
-            table.insert(sector.side:lower() == "left" and tab.SectorsLeft or tab.SectorsRight, sector)
+            table.insert(sector.side == "left" and tab.SectorsLeft or tab.SectorsRight, sector)
 
             function sector:FixSize()
                 sector.Main.Size = UDim2.fromOffset(window.size.X.Offset / 2 - 17, sector.ListLayout.AbsoluteContentSize.Y + 22)
