@@ -384,17 +384,6 @@ function library:CreateWindow(name, size, hidebutton)
     window.TabList.InputBegan:Connect(dragstart)
     window.TabList.InputChanged:Connect(dragend)
 
-    window.BlackLine = Instance.new("Frame", window.Frame)
-    window.BlackLine.Name = "blackline"
-    window.BlackLine.Size = UDim2.fromOffset(window.size.X.Offset, 1)
-    window.BlackLine.BorderSizePixel = 0
-    window.BlackLine.ZIndex = 9
-    window.BlackLine.BackgroundColor3 = window.theme.outlinecolor2
-    window.BlackLine.Position = UDim2.fromOffset(0, window.TopBar.AbsoluteSize.Y)
-    updateevent.Event:Connect(function(theme)
-        window.BlackLine.BackgroundColor3 = theme.outlinecolor2
-    end)
-
     window.Line = Instance.new("Frame", window.Frame)
     window.Line.Name = "line"
     window.Line.Position = UDim2.fromOffset(0, 0)
@@ -446,7 +435,7 @@ function library:CreateWindow(name, size, hidebutton)
         tab.Left.Visible = false
         tab.Left.ScrollBarThickness = 0
         tab.Left.ScrollingDirection = "Y"
-        tab.Left.Position = window.BlackLine.Position + UDim2.fromOffset(0, 1)
+        tab.Left.Position = UDim2.fromOffset(0, window.TopBar.AbsoluteSize.Y) + UDim2.fromOffset(0, 1)
 
         tab.LeftListLayout = Instance.new("UIListLayout", tab.Left)
         tab.LeftListLayout.FillDirection = Enum.FillDirection.Vertical
