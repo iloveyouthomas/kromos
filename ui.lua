@@ -518,17 +518,6 @@ function library:CreateWindow(name, size, hidebutton)
                 sector.Main.BackgroundColor3 = theme.sectorcolor
             end)
 
-            sector.Line = Instance.new("Frame", sector.Main)
-            sector.Line.Name = "line"
-            sector.Line.ZIndex = 4
-            sector.Line.Size = UDim2.fromOffset(sector.Main.Size.X.Offset + 4, 1)
-            sector.Line.BorderSizePixel = 0
-            sector.Line.Position = UDim2.fromOffset(-2, -2)
-            sector.Line.BackgroundColor3 = window.theme.accentcolor
-            updateevent.Event:Connect(function(theme)
-                sector.Line.BackgroundColor3 = theme.accentcolor
-            end)
-
             sector.BlackOutline = Instance.new("Frame", sector.Main)
             sector.BlackOutline.Name = "outline"
             sector.BlackOutline.ZIndex = 3
