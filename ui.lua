@@ -384,16 +384,6 @@ function library:CreateWindow(name, size, hidebutton)
     window.TabList.InputBegan:Connect(dragstart)
     window.TabList.InputChanged:Connect(dragend)
 
-    window.Line = Instance.new("Frame", window.Frame)
-    window.Line.Name = "line"
-    window.Line.Position = UDim2.fromOffset(0, 0)
-    window.Line.Size = UDim2.fromOffset(60, 1)
-    window.Line.BorderSizePixel = 0
-    window.Line.BackgroundColor3 = window.theme.accentcolor
-    updateevent.Event:Connect(function(theme)
-        window.Line.BackgroundColor3 = theme.accentcolor
-    end)
-
     window.ListLayout = Instance.new("UIListLayout", window.TabList)
     window.ListLayout.FillDirection = Enum.FillDirection.Horizontal
     window.ListLayout.SortOrder = Enum.SortOrder.LayoutOrder
@@ -516,6 +506,17 @@ function library:CreateWindow(name, size, hidebutton)
             --sector.Main.Position = sector.side == "left" and UDim2.new(0, 11, 0, 12) or UDim2.new(0, window.size.X.Offset - sector.Main.AbsoluteSize.X - 11, 0, 12)
             updateevent.Event:Connect(function(theme)
                 sector.Main.BackgroundColor3 = theme.sectorcolor
+            end)
+
+            sector.Line = Instance.new("Frame", sector.Main)
+            sector.Line.Name = "line"
+            sector.Line.ZIndex = 4
+            sector.Line.Size = UDim2.fromOffset(sector.Main.Size.X.Offset + 4, 1)
+            sector.Line.BorderSizePixel = 0
+            sector.Line.Position = UDim2.fromOffset(-2, -2)
+            sector.Line.BackgroundColor3 = window.theme.accentcolor
+            updateevent.Event:Connect(function(theme)
+                sector.Line.BackgroundColor3 = theme.accentcolor
             end)
 
             sector.BlackOutline = Instance.new("Frame", sector.Main)
