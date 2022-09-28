@@ -495,7 +495,7 @@ function library:CreateWindow(name, hidebutton)
         function tab:CreateSector(name,side)
             local sector = { }
             sector.name = name or ""
-            sector.side = "left"
+            sector.side = side
             
             sector.Main = Instance.new("Frame", sector.side == "left" and tab.Left or tab.Right) 
             sector.Main.Name = sector.name:gsub(" ", "") .. "Sector"
